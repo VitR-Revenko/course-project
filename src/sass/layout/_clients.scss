@@ -1,0 +1,93 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    @include toRem(line-height, 17);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color-main-regular;
+    @include toRem(padding-bottom, 30);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 120px;
+    @include tablet-sd {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    max-width: 50%;
+  }
+}
+
+.hidden {
+  display: none;
+
+  @include tablet-sd {
+    display: flex;
+  }
+}
+
+.hillel {
+  background: #1C4280;
+}
+
+.wannabiz {
+  background: #143646;
+}
+
+.tapgerine {
+  background: #F48B30;
+}
+
+.dlook {
+  background: #9E4DC3;
+}
+
+.orangear {
+  background: #FD9339;
+}
+
+.adtelligent {
+  background: #E2E2E4;
+}
+
+.clickky {
+  background: #C71C36;
+}
+
+.ecoleasing {
+  background: #DCF3F9;
+}
+
+.infratek {
+  background: #EAEAEA;
+}
+
+.citypark {
+  background: #282240;
+}
+
+.artprint {
+  background: #1D4568;
+}
+
+.ultimatecard {
+  background: #000000;
+}

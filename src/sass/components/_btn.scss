@@ -1,0 +1,35 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+
+.btn {
+  background: none;
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-scroll {
+    cursor: pointer;
+
+    &:hover g > * {
+      stroke: $color-accent;
+    }
+  }
+}
+
+.burger {
+  @include tablet-sd {
+    display: none;
+  }
+
+  &:hover {
+    background: $color-separator;
+    border-radius: 8px;
+
+    * {
+      stroke: #323264;
+    }
+  }
+}

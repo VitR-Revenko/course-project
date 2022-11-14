@@ -1,0 +1,209 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+.gradient__wrap {
+  background: $color-gradient-super-soft;
+  @include toRem(padding-bottom, 60);
+  border-radius: 0px 0px 12px 12px;
+}
+
+.svg {
+  display: grid;
+  height: 0;
+}
+
+.container {
+  @include toRem(max-width, 315);
+  margin: 0 auto;
+
+  @include tablet-sd {
+    @include toRem(max-width, 648);
+  }
+}
+
+.exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    @include toRem(max-width, 315);
+    display: flex;
+    flex-direction: row;
+    @include toRem(gap, 30);
+    overflow: scroll;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+    @include toRem(margin-top, 30);
+    @include toRem(padding-bottom, 30);
+
+    @include tablet-sd {
+      @include toRem(max-width, 648);
+    }
+
+    &-name {
+      font-weight: 700;
+      @include toRem(font-size, 30);
+      @include toRem(line-height, 37);
+      color: $color-text;
+      background: none;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-accent;
+      }
+    }
+
+    &-current {
+      background: $color-gradient-red-text-reverse;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      // text-fill-color: transparent;
+    }
+  }
+
+  &__descr {
+    @include toRem(margin-top, 30);
+    display: flex;
+    flex-direction: column;
+    @include toRem(gap, 30);
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    @include toRem(font-size, 20);
+    @include toRem(line-height, 24);
+    color: #fff;
+  }
+
+  &__text {
+    margin: 0;
+    @include toRem(margin-bottom, 30);
+    color: #fff;
+    @include toRem(font-size, 19);
+    @include toRem(line-height, 30);
+  }
+}
+
+.shadow-dark {
+  margin: 0 auto;
+  @include toRem(height, 10);
+  width: 89%;
+  background: #cacadb;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.shadow-light {
+  margin: 0 auto;
+  @include toRem(height, 10);
+  width: 78.7%;
+  background: #e7e7f2;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.team {
+  @include toRem(margin-top, 30);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include toRem(gap, 30);
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include toRem(gap, 30);
+    background: $color-bg;
+    border-radius: 12px;
+  }
+
+  &__content {
+    @include toRem(padding-left, 30);
+    @include toRem(padding-right, 30);
+  }
+
+  &__img {
+    width: 100%;
+    // border-radius: 12px 12px 0px 0px;
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      max-width: inherit;
+      border-radius: 12px 12px 0px 0px;
+      overflow: hidden;
+      
+      @include tablet-sd {
+        height: 500px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 700;
+    @include toRem(font-size, 30);
+    @include toRem(line-height, 37);
+    background: $color-gradient-red-text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    // text-fill-color: transparent;
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include toRem(padding-left, 30);
+    @include toRem(padding-right, 30);
+    @include toRem(padding-bottom, 30);
+
+    &-primary {
+      font-weight: 700;
+      @include toRem(line-height, 20);
+      color: $color-text;
+    }
+
+    &-secondary {
+      @include toRem(line-height, 22);
+      color: $color-text;
+      @include toRem(margin-top, 6);
+    }
+  }
+}
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  gap: 15px;
+  @include toRem(margin-bottom, 60);
+
+  &__item {
+    width: 16px;
+    height: 16px;
+    background: $color-active-regular;
+    border-radius: 50%;
+    opacity: 0.2;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__current {
+    opacity: 1;
+  }
+
+  &__btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+}

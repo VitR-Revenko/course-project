@@ -1,0 +1,192 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  @include tablet-sd {
+    align-items: flex-start;
+  }
+
+  &__logo {
+    @include tablet-sd {
+      @include toRem(width, 130);
+    }
+
+    &-wrap {
+      order: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      @include toRem(padding-top, 10);
+      @include toRem(padding-bottom, 10);
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
+
+      @include tablet-sd {
+        @include toRem(padding-left, 60);
+        @include toRem(padding-bottom, 30);
+      }
+    }
+  }
+
+  &__contacts {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include toRem(padding-top, 10);
+    @include toRem(padding-bottom, 10);
+    @include toRem(padding-left, 15);
+    @include toRem(padding-right, 15);
+    z-index: 1;
+
+    @include tablet-sd {
+      justify-content: flex-start;
+      @include toRem(padding-top, 50);
+      @include toRem(padding-bottom, 30);
+      @include toRem(padding-left, 60);
+      @include toRem(padding-right, 60);
+      @include toRem(gap, 6);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6.5%;
+      background-color: #ffffff;
+      opacity: 0.3;
+      z-index: 0;
+
+      @include tablet-sd {
+        display: none;
+      }
+    }
+  }
+
+  &__lang {
+    font-weight: 700;
+    @include toRem(font-size, 12);
+    text-align: center;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 5px 7px;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+    }
+
+    &-wrap {
+      z-index: 1;
+    }
+
+    &-current {
+      background: $color-accent;
+      border-radius: 8px;
+    }
+  }
+
+  &__address {
+    display: none;
+
+    @include tablet-sd {
+      display: inline;
+      z-index: 1;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  &__btn-scroll {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include toRem(bottom, 30);
+  }
+
+  &::before {
+    content: url("../img/h.svg");
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 87.234vh;
+    z-index: 0;
+  }
+}
+
+.who-we-are {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  @include toRem(font-size, 38);
+  @include toRem(line-height, 46);
+  text-align: center;
+  color: #ffffff;
+
+  @include tablet-sd {
+    white-space: nowrap;
+  }
+}
+
+.nav {
+  display: none;
+
+  &__additional {
+    display: none;
+
+  @include tablet-sd {
+    order: 3;
+    display: block;
+    @include toRem(padding-left, 60);
+    z-index: 1;
+  }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    @include toRem(gap, 15);
+    list-style: none;
+  }
+
+  &__link {
+    font-weight: 700;
+    @include toRem(line-height, 20);
+    color: #FFFFFF;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.fb-white {
+  display: none;
+
+  @include tablet-sd {
+    display: inline;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &:hover g > * {
+    fill: $color-accent;
+  }
+}

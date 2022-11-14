@@ -1,0 +1,91 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+.recs {
+  &__wrap {
+    background: $color-bg;
+    @include toRem(padding, 30);
+  }
+
+  &__headtitle {
+    margin: 0;
+    font-weight: 700;
+    @include toRem(font-size, 30);
+    @include toRem(line-height, 37);
+    background: $color-gradient-red-text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    // text-fill-color: transparent;
+    @include toRem(margin-bottom, 30);
+  }
+
+  &__cards {
+    display: grid;
+    @include toRem(gap, 30);
+    grid-template-columns: 1fr;
+
+    @include tablet-sd {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #ffffff;
+    border-radius: 8px;
+
+    &:last-of-type {
+    @include tablet-sd {
+        grid-column-start: span 2;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    border-radius: 8px 8px 0px 0px;
+
+    &-wrap {
+      max-width: fit-content;
+    }
+  }
+
+  &__content {
+    @include toRem(padding, 30);
+  }
+
+  &__title {
+    margin: 0;
+    @include toRem(margin-bottom, 15);
+
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      @include toRem(line-height, 20);
+      color: $color-active-regular;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__date {
+    font-weight: 700;
+    @include toRem(font-size, 12);
+    @include toRem(line-height, 15);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color-text;
+  }
+
+  &__text {
+    @include toRem(padding-top, 30);
+    @include toRem(font-size, 14);
+    @include toRem(line-height, 22);
+    border-top: 4px solid $color-separator;
+  }
+}

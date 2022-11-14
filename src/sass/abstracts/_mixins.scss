@@ -1,0 +1,27 @@
+@mixin toRem($property, $value) {
+  #{$property}: calc($value / 16) + rem;
+}
+
+@mixin tablet-sd {
+  @media screen and (min-width: 768px){
+      @content;
+  }
+}
+
+@mixin tablet-hd {
+  @media screen and  (min-width: 1024px){
+      @content;
+  }
+}
+
+@mixin desktop-sd {
+  @media screen and  (min-width: 1440px){
+      @content;
+  }
+}
+
+@mixin desktop-hd {
+  @media screen and  (min-width: 1920px){
+      @content;
+  }
+}

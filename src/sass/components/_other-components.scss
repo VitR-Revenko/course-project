@@ -1,0 +1,72 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+.number {
+  font-weight: 700;
+  @include toRem(line-height, 20);
+  z-index: 1;
+  white-space: nowrap;
+
+  &-light {
+    color: #ffffff;
+  }
+
+  &-dark {
+    color: $color-main-alt;
+  }
+}
+
+.address {
+  @include toRem(line-height, 20);
+
+  &-light {
+    color: #ffffff;
+  }
+
+  &-grey {
+    color: $color-text;
+  }
+
+  &-dark {
+    color: $color-main-alt;
+  }
+}
+
+.url {
+  color: $color-active-regular;
+  font-weight: 700;
+  @include toRem(font-size, 14);
+  @include toRem(line-height, 17);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  @include toRem(margin-bottom, 10);
+
+  &:hover {
+    color: $color-accent;
+
+    * {
+      stroke: $color-accent;
+    }
+  }
+}
+
+.dot {
+  display: none;
+
+  @include tablet-sd {
+    display: inline;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &-white {
+    background: #ffffff;
+  }
+
+  &-grey {
+    background: $color-text;
+  }
+}
