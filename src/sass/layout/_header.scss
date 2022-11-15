@@ -9,14 +9,32 @@
   @include tablet-sd {
     align-items: flex-start;
     @include toRem(padding-top, 50);
-    @include toRem(padding-left, 60);
-    @include toRem(padding-right, 60);
   }
 
   @include tablet-hd {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__wrap {
+    margin: 0 auto;
+
+    @include tablet-sd {
+      @include toRem(max-width, 648);
+    }
+
+    @include tablet-hd {
+      @include toRem(max-width, 904);
+    }
+
+    @include desktop-sd {
+      @include toRem(max-width, 1320);
+    }
+
+    @include desktop-hd {
+      @include toRem(max-width, 1720);
+    }
   }
 
   &__logo {
@@ -46,6 +64,13 @@
         margin: 0;
       }
     }
+  }
+
+  &__page-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
   }
 
   &__right-side {
@@ -132,11 +157,11 @@
       z-index: 1;
     }
   }
+}
 
-  &__wrap {
-    position: relative;
-    min-height: 100vh;
-  }
+.h-wrap {
+  position: relative;
+  min-height: 100vh;
 
   &__btn-scroll {
     position: absolute;
@@ -207,7 +232,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $color-accent;
+      text-decoration: underline 2px;
     }
   }
 }

@@ -27,6 +27,10 @@
   @include desktop-sd {
     @include toRem(max-width, 1320);
   }
+
+  @include desktop-hd {
+    @include toRem(max-width, 1720);
+  }
 }
 
 .exp {
@@ -43,7 +47,6 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    @include toRem(margin-bottom, 60);
   }
 
   &__content {
@@ -143,17 +146,15 @@
 }
 
 .shadow-dark {
-  margin: 0 auto;
+  margin: 0 20px;
   @include toRem(height, 10);
-  width: 89%;
   background: #cacadb;
   border-radius: 0px 0px 12px 12px;
 }
 
 .shadow-light {
-  margin: 0 auto;
+  margin: 0 40px;
   @include toRem(height, 10);
-  width: 78.7%;
   background: #e7e7f2;
   border-radius: 0px 0px 12px 12px;
 }
@@ -258,7 +259,6 @@
   list-style: none;
   justify-content: center;
   gap: 15px;
-  @include toRem(margin-bottom, 60);
 
   &__item {
     width: 16px;

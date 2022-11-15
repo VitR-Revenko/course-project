@@ -5,6 +5,7 @@
   &__wrap {
     background: $color-bg;
     @include toRem(padding, 30);
+    border-bottom: 2px solid $color-separator;
   }
 
   &__headtitle {

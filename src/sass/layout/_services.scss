@@ -2,6 +2,8 @@
 @use "abstracts/mixins" as *;
 
 .services {
+  @include toRem(margin-top, 60);
+
   &__headtitle {
     margin: 0;
     font-weight: 700;
@@ -58,6 +60,14 @@
     @include toRem(font-size, 22);
     @include toRem(line-height, 27);
     color: $color-active-regular;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
   }
 
   &__text {

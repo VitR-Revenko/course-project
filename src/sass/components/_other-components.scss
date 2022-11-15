@@ -70,3 +70,22 @@
     background: $color-text;
   }
 }
+
+
+.page-title {
+  @include toRem(font-size, 20);
+  @include toRem(line-height, 24);
+
+  @include tablet-sd {
+    @include toRem(font-size, 36);
+    @include toRem(line-height, 44);
+  }
+
+  &-white {
+    color: #ffffff;
+  }
+
+  &-dark {
+    color: $color-main-regular;
+  }
+}
