@@ -8,6 +8,15 @@
 
   @include tablet-sd {
     align-items: flex-start;
+    @include toRem(padding-top, 50);
+    @include toRem(padding-left, 60);
+    @include toRem(padding-right, 60);
+  }
+
+  @include tablet-hd {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__logo {
@@ -25,11 +34,26 @@
       @include toRem(padding-bottom, 10);
       @include toRem(padding-left, 15);
       @include toRem(padding-right, 15);
+      z-index: 1;
 
       @include tablet-sd {
-        @include toRem(padding-left, 60);
-        @include toRem(padding-bottom, 30);
+        @include toRem(margin-bottom, 30);
       }
+
+      @include tablet-hd {
+        order: 0;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &__right-side {
+    @include tablet-hd {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      @include toRem(gap, 15);
     }
   }
 
@@ -47,11 +71,15 @@
 
     @include tablet-sd {
       justify-content: flex-start;
-      @include toRem(padding-top, 50);
-      @include toRem(padding-bottom, 30);
-      @include toRem(padding-left, 60);
-      @include toRem(padding-right, 60);
+      @include toRem(margin-bottom, 30);
       @include toRem(gap, 6);
+    }
+
+    @include tablet-hd {
+      order: 0;
+      padding: 0;
+      justify-content: flex-end;
+      margin: 0;
     }
 
     &::before {
@@ -147,15 +175,22 @@
 .nav {
   display: none;
 
+  @include tablet-hd {
+    display: inline-block;
+  }
+
   &__additional {
     display: none;
 
-  @include tablet-sd {
-    order: 3;
-    display: block;
-    @include toRem(padding-left, 60);
-    z-index: 1;
-  }
+    @include tablet-sd {
+      order: 3;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    @include tablet-hd {
+      display: none;
+    }
   }
 
   &__list {
@@ -168,7 +203,7 @@
   &__link {
     font-weight: 700;
     @include toRem(line-height, 20);
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
 
     &:hover {

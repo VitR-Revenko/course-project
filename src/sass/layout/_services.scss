@@ -13,6 +13,12 @@
     background-clip: text;
     // text-fill-color: transparent;
     @include toRem(margin-bottom, 30);
+
+    @include tablet-sd {
+      @include toRem(font-size, 38);
+      @include toRem(line-height, 46);
+      @include toRem(margin-bottom, 60);
+    }
   }
 
   &__cards {
@@ -22,6 +28,10 @@
 
     @include tablet-sd {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet-sd {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 

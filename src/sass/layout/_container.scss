@@ -19,12 +19,32 @@
   @include tablet-sd {
     @include toRem(max-width, 648);
   }
+
+  @include tablet-hd {
+    @include toRem(max-width, 904);
+  }
+
+  @include desktop-sd {
+    @include toRem(max-width, 1320);
+  }
 }
 
 .exp {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include toRem(margin-top, 30);
+
+  @include tablet-sd {
+    @include toRem(margin-top, 60);
+  }
+
+  @include tablet-hd {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    @include toRem(margin-bottom, 60);
+  }
 
   &__content {
     @include toRem(max-width, 315);
@@ -32,12 +52,24 @@
     flex-direction: row;
     @include toRem(gap, 30);
     overflow: scroll;
-    border-bottom: 4px solid rgba(255, 255, 255, 0.3);
     @include toRem(margin-top, 30);
     @include toRem(padding-bottom, 30);
+    border-bottom: 4px solid rgba(255, 255, 255, 0.3);
 
     @include tablet-sd {
       @include toRem(max-width, 648);
+    }
+
+    @include tablet-hd {
+      @include toRem(max-width, 904);
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0;
+      @include toRem(padding-right, 60);
+      overflow: visible;
+      margin: 0;
+      border-right: 4px solid rgba(255, 255, 255, 0.3);
+      border-bottom: none;
     }
 
     &-name {
@@ -49,6 +81,11 @@
       border: 0;
       padding: 0;
       white-space: nowrap;
+
+      @include tablet-sd {
+        @include toRem(font-size, 38);
+        @include toRem(line-height, 46);
+      }
 
       &:hover {
         cursor: pointer;
@@ -70,6 +107,13 @@
     display: flex;
     flex-direction: column;
     @include toRem(gap, 30);
+    @include toRem(padding-top, 30);
+
+    @include tablet-hd {
+      margin: 0;
+      padding: 0;
+      @include toRem(padding-left, 60);
+    }
   }
 
   &__title {
@@ -78,6 +122,11 @@
     @include toRem(font-size, 20);
     @include toRem(line-height, 24);
     color: #fff;
+
+    @include tablet-sd {
+      @include toRem(font-size, 30);
+      @include toRem(line-height, 37);
+    }
   }
 
   &__text {
@@ -86,6 +135,10 @@
     color: #fff;
     @include toRem(font-size, 19);
     @include toRem(line-height, 30);
+
+    @include tablet-hd {
+      margin: 0;
+    }
   }
 }
 
@@ -116,29 +169,49 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @include toRem(gap, 30);
     background: $color-bg;
     border-radius: 12px;
+    overflow: hidden;
+
+    @include tablet-hd {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__content {
-    @include toRem(padding-left, 30);
-    @include toRem(padding-right, 30);
+    @include toRem(margin-bottom, 30);
+
+    &-wrap {
+      @include toRem(padding, 30);
+    }
   }
 
   &__img {
     width: 100%;
-    // border-radius: 12px 12px 0px 0px;
+
+    @include tablet-hd {
+      width: 200%;
+    }
+
+    @include desktop-sd {
+      width: 175%;
+    }
 
     &-wrap {
       display: flex;
       align-items: center;
-      max-width: inherit;
-      border-radius: 12px 12px 0px 0px;
+      justify-content: center;
+      width: 100%;
       overflow: hidden;
+
+      @include tablet-hd {
+        width: 200%;
+      }
       
-      @include tablet-sd {
-        height: 500px;
+      @include desktop-sd {
+        width: 125%;
       }
     }
   }
@@ -153,15 +226,17 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     // text-fill-color: transparent;
+
+    @include tablet-sd {
+      @include toRem(font-size, 38);
+      @include toRem(line-height, 46);
+    }
   }
 
   &__author {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    @include toRem(padding-left, 30);
-    @include toRem(padding-right, 30);
-    @include toRem(padding-bottom, 30);
 
     &-primary {
       font-weight: 700;
