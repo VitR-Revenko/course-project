@@ -3,18 +3,37 @@
   console.log(`${message}!!!`);
 })();
 
-var modal = document.getElementById("modal");
+var menu = document.getElementById("menu");
 
-var btn = document.getElementById("js-modal-open");
+var contact = document.getElementById("contact");
 
-var cross = document.getElementById("js-modal-close");
+var menuBtn = document.getElementById("js-menu-open");
 
-btn.onclick = function () {
-  modal.style.display = "block";
+var contactBtn = document.getElementById("js-contact-open");
+
+var menuClose = document.getElementById("js-menu-close");
+
+var contactClose = document.getElementById("js-contact-close");
+
+menuBtn.onclick = function () {
+  menu.style.display = "block";
 };
 
-modal.onclick = function (e) {
-  if ([modal, cross].includes(e.target)) {
-    modal.style.display = "none";
+menuClose.onclick = function() {
+  menu.style.display = "none";
+}
+
+
+menu.onclick = function (e) {
+  if ([menu, menuClose].includes(e.target)) {
+    menu.style.display = "none";
   }
 };
+
+contactBtn.onclick = function () {
+  contact.style.display = "block";
+};
+
+contactClose.onclick = function() {
+  contact.style.display = "none";
+}

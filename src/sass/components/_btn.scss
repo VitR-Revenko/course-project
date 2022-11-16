@@ -5,6 +5,31 @@
   background: none;
   border: 0;
 
+  &-primary {
+    @include toRem(line-height, 20);
+    color: #fff;
+    @include toRem(padding-top, 18);
+    @include toRem(padding-bottom, 18);
+    @include toRem(padding-left, 30);
+    @include toRem(padding-right, 30);
+    background: $color-active-regular;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    border-radius: 12px;
+
+    &:hover {
+      background: $color-active-hover;
+    }
+
+    &:active {
+      background: $color-active-active;
+    }
+
+    &:focus {
+      background: $color-bg-alt;
+      color: $color-main-regular;
+    }
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -24,6 +49,11 @@
       padding: 7px;
       align-self: flex-end;
       &:hover {
+        background: $color-separator;
+        border-radius: 8px;
+      }
+
+      &:focus {
         background: $color-separator;
         border-radius: 8px;
       }

@@ -1,0 +1,23 @@
+<div class="form__wrap">
+  <div class="form__header">
+    <h1 class="form__title">We would like to help you</h1>
+    <button id="js-contact-close" class="btn btn-close__wrap" hidden>
+      <svg class="btn-close" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 7L25 25" stroke="#EC6F5D" stroke-width="2" />
+        <path d="M25 7L7 25" stroke="#EC6F5D" stroke-width="2" />
+      </svg>
+    </button>
+  </div>
+  <form action="https://fom.in.ua/echo" method="post" class="form">
+    <div class="form__fieldset">
+      <input class="form__field" type="text" name="name" placeholder="Name">
+      <input class="form__field" type="text" name="message" placeholder="Message">
+    </div>
+    <div class="form__fieldset">
+      <h3 class="form__subtitle">How to answer you?</h3>
+      <input class="form__field" type="number" name="number" placeholder="Phone number">
+      <input class="form__field" type="email" name="email" placeholder="Email" pattern="example@example.com">
+    </div>
+    <div class="form__btn"><button class="btn btn-primary" type="submit">Send message</button></div>
+  </form>
+</div>

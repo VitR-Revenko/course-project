@@ -1,6 +1,11 @@
 @use "abstracts/variables" as *;
 @use "abstracts/mixins" as *;
 
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
 .gradient__wrap {
   background: $color-gradient-super-soft;
   @include toRem(padding-bottom, 60);
@@ -205,6 +210,7 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      object-fit: cover;
       overflow: hidden;
 
       @include tablet-hd {
