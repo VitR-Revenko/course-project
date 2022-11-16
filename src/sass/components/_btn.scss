@@ -1,7 +1,6 @@
 @use "abstracts/variables" as *;
 @use "abstracts/mixins" as *;
 
-
 .btn {
   background: none;
   border: 0;
@@ -17,6 +16,19 @@
       stroke: $color-accent;
     }
   }
+
+  &-close {
+    cursor: pointer;
+
+    &__wrap {
+      padding: 7px;
+      align-self: flex-end;
+      &:hover {
+        background: $color-separator;
+        border-radius: 8px;
+      }
+    }
+  }
 }
 
 .burger {
@@ -24,7 +36,7 @@
     display: none;
   }
 
-  &:hover {
+  &:active {
     background: $color-separator;
     border-radius: 8px;
 

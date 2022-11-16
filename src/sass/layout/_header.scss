@@ -162,6 +162,7 @@
 .h-wrap {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 
   &__btn-scroll {
     position: absolute;
