@@ -90,4 +90,4 @@ gulp.task('clean', function(done) {
 })
 
 gulp.task('build', gulp.series('clean', 'validate', 'html', 'img', 'styles', 'scripts', 'fonts'));
-gulp.task('start', gulp.parallel('build', 'browsersync',  'watchFiles'));
+gulp.task('start', gulp.series('build', 'browsersync',  'watchFiles'));
