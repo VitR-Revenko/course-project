@@ -130,7 +130,6 @@
   
       @include tablet-hd {
         flex-direction: row;
-        justify-content: center;
         align-items: center;
       }
     }
@@ -160,7 +159,6 @@
           min-width: 400px;
           height: auto;
         }
-     
       }
     }
   
