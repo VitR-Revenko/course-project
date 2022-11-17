@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
-
+  
   @include tablet-sd {
     align-items: flex-start;
     @include toRem(padding-top, 50);
@@ -15,26 +15,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  }
-
-  &__wrap {
-    margin: 0 auto;
-
-    @include tablet-sd {
-      @include toRem(max-width, 648);
-    }
-
-    @include tablet-hd {
-      @include toRem(max-width, 904);
-    }
-
-    @include desktop-sd {
-      @include toRem(max-width, 1320);
-    }
-
-    @include desktop-hd {
-      @include toRem(max-width, 1720);
-    }
   }
 
   &__logo {
@@ -200,6 +180,7 @@
 
 .nav {
   display: none;
+  z-index: 1;
 
   @include tablet-hd {
     display: inline-block;
@@ -240,14 +221,16 @@
 }
 
 .fb-white {
-  display: none;
+  &__link {
+    display: none;
 
-  @include tablet-sd {
-    display: inline;
-    z-index: 1;
-    cursor: pointer;
+    @include tablet-sd {
+      display: inline;
+      z-index: 1;
+      cursor: pointer;
+    }
   }
-
+  
   &:hover g > * {
     fill: $color-accent;
   }
