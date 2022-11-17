@@ -2,6 +2,13 @@
 @use "abstracts/mixins" as *;
 
 .recs {
+  &__link {
+    text-decoration: none;
+
+    &:hover .recs__title {
+      color: $color-accent;
+    }
+  }
   &__wrap {
     background: $color-bg;
     @include toRem(padding, 30);
@@ -69,17 +76,9 @@
   &__title {
     margin: 0;
     @include toRem(margin-bottom, 15);
-
-    a {
-      text-decoration: none;
-      font-weight: 700;
-      @include toRem(line-height, 20);
-      color: $color-active-regular;
-
-      &:hover {
-        color: $color-accent;
-      }
-    }
+    font-weight: 700;
+    @include toRem(line-height, 20);
+    color: $color-active-regular;
   }
 
   &__date {
@@ -95,6 +94,7 @@
     @include toRem(padding-top, 30);
     @include toRem(font-size, 14);
     @include toRem(line-height, 22);
+    color: #000;
     border-top: 4px solid $color-separator;
   }
 }

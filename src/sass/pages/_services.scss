@@ -3,7 +3,7 @@
 
 .services-page {
   color: $color-accent;
-  text-decoration: underline 2px;
+  border-bottom: 2px solid $color-accent;
 }
 
 .services .url {
@@ -58,12 +58,12 @@
     display: grid;
     grid-template-rows: repeat(8, auto);
     color: $color-accent;
-    @include toRem(gap,15);
+    @include toRem(gap, 15);
     grid-auto-flow: column;
 
     @include tablet-sd {
       grid-template-rows: repeat(4, 1fr);
-      @include toRem (column-gap, 60);
+      @include toRem(column-gap, 60);
     }
 
     &-wrap {

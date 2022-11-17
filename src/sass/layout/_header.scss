@@ -233,7 +233,8 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline 2px;
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
     }
   }
 }

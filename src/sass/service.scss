@@ -10,12 +10,13 @@
 @use 'layout/container';
 @use 'layout/header';
 @use 'layout/footer';
-@use 'layout/services';
+@use 'layout/services-block';
 @use 'layout/clients';
 @use 'layout/recs';
 @use 'layout/modal';
 
+@use 'pages/services';
+
 @use 'components/btn';
 @use 'components/animation';
 @use 'components/other-components';
-@use 'components/service-add-comps';

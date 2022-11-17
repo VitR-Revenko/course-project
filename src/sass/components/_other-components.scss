@@ -6,6 +6,7 @@
   @include toRem(line-height, 20);
   z-index: 1;
   white-space: nowrap;
+  text-decoration: none;
 
   &-light {
     color: #ffffff;
@@ -13,6 +14,10 @@
 
   &-dark {
     color: $color-main-alt;
+  }
+
+  &:hover {
+    color: $color-accent;
   }
 }
 
